@@ -1,0 +1,17 @@
+{
+    "name": "clearvox/constraints-date",
+    "description": "DateTime Constraints Library. Use this to add constraints to a validator and verify DateTime objects pass those constraints.",
+    "license": "MIT",
+    "type": "project",
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Clearvox\\DateConstraints\\": "src"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}
