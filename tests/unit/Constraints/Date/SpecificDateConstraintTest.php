@@ -29,4 +29,9 @@ class SpecificDateConstraintTest extends PHPUnit_Framework_TestCase
     {
         $this->assertFalse($this->constraint->isValid(new DateTime('2016-06-10')));
     }
+
+    public function testGetDates()
+    {
+        $this->assertEquals([1,2,3,4,5], $this->constraint->getDates());
+    }
 }

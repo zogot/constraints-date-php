@@ -36,4 +36,9 @@ class SpecificDayConstraintTest extends PHPUnit_Framework_TestCase
         $this->constraint->addDay(SpecificDayConstraint::TUESDAY);
         $this->assertFalse($this->constraint->isValid(new DateTime('2016-02-17')));
     }
+
+    public function testGetDays()
+    {
+        $this->assertEquals([SpecificDayConstraint::MONDAY], $this->constraint->getDays());
+    }
 }

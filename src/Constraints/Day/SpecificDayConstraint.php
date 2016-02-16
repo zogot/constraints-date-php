@@ -18,6 +18,15 @@ class SpecificDayConstraint implements DayConstraintInterface
         return $this;
     }
 
+    /**
+     * Get the days set for this Day Constraint
+     * @return integer[]
+     */
+    public function getDays()
+    {
+        return $this->days;
+    }
+
     public function isValid(DateTime $dateTime)
     {
         $submittedDay = $dateTime->format('N');

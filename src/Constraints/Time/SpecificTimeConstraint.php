@@ -22,6 +22,16 @@ class SpecificTimeConstraint implements TimeConstraintInterface
     }
 
     /**
+     * Return set times for this Time Constraint
+     *
+     * @return DateTime[]
+     */
+    public function getTimes()
+    {
+        return [$this->time];
+    }
+
+    /**
      * Is the passed in DateTime valid for this constraint?
      *
      * @param DateTime $dateTime

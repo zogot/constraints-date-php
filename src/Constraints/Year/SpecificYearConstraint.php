@@ -22,6 +22,17 @@ class SpecificYearConstraint implements YearConstraintInterface
     }
 
     /**
+     * Return set years for this year constraint as an array of
+     * strings/integers
+     *
+     * @return array
+     */
+    public function getYears()
+    {
+        return $this->years;
+    }
+
+    /**
      * Is the passed in DateTime valid for this constraint?
      *
      * @param DateTime $dateTime

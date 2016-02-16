@@ -33,4 +33,9 @@ class SpecificYearConstraintTest extends PHPUnit_Framework_TestCase
     {
         $this->assertFalse($this->constraint->isValid(new DateTime('2016-01-01')));
     }
+
+    public function testGetYears()
+    {
+        $this->assertEquals([2015], $this->constraint->getYears());
+    }
 }

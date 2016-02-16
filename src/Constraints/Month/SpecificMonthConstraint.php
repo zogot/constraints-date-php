@@ -28,6 +28,16 @@ class SpecificMonthConstraint implements MonthConstraintInterface
     }
 
     /**
+     * Returns the integers of the chosen months for this constraint.
+     *
+     * @return integer[]
+     */
+    public function getMonths()
+    {
+        return $this->months;
+    }
+
+    /**
      * Is the passed in DateTime valid for this constraint?
      *
      * @param DateTime $dateTime

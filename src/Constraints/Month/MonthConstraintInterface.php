@@ -17,4 +17,11 @@ interface MonthConstraintInterface extends ConstraintInterface
     const OCTOBER = 10;
     const NOVEMBER = 11;
     const DECEMBER = 12;
+
+    /**
+     * Returns the integers of the chosen months for this constraint.
+     *
+     * @return integer[]
+     */
+    public function getMonths();
 }

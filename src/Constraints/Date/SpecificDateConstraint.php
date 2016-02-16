@@ -13,6 +13,16 @@ class SpecificDateConstraint implements DateConstraintInterface
     }
 
     /**
+     * Get the numerical dates set for this date constraint
+     *
+     * @return integer[]
+     */
+    public function getDates()
+    {
+        return $this->dates;
+    }
+
+    /**
      * Is the passed in DateTime valid for this constraint?
      *
      * @param DateTime $dateTime

@@ -38,4 +38,9 @@ class SpecificMonthConstraintTest extends PHPUnit_Framework_TestCase
 
         $this->assertFalse($this->constraint->isValid(new DateTime('2016-03-01')));
     }
+
+    public function testGetMonths()
+    {
+        $this->assertEquals([SpecificMonthConstraint::JANUARY], $this->constraint->getMonths());
+    }
 }

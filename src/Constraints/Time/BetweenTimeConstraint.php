@@ -15,6 +15,11 @@ class BetweenTimeConstraint implements TimeConstraintInterface
         $this->before = new DateTime($before->format('H:i:s'));
     }
 
+    public function getTimes()
+    {
+        return [$this->after, $this->before];
+    }
+
     /**
      * Is the passed in DateTime valid for this constraint?
      *
