@@ -1,8 +1,8 @@
 <?php
-namespace Clearvox\DateConstraints\Constraints\Time;
+namespace Zogo\DateConstraints\Constraints\Time;
 
 use DateTime;
-use Clearvox\DateConstraints\Constraints\ConstraintInterface;
+use Zogo\DateConstraints\Constraints\ConstraintInterface;
 
 interface TimeConstraintInterface extends ConstraintInterface
 {

@@ -1,7 +1,7 @@
 <?php
 
-use Clearvox\DateConstraints\Constraints\ConstraintInterface;
-use Clearvox\DateConstraints\Validators\AndValidator;
+use Zogo\DateConstraints\Constraints\ConstraintInterface;
+use Zogo\DateConstraints\Validators\AndValidator;
 
 class AndValidatorTest extends PHPUnit_Framework_TestCase
 {

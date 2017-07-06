@@ -1,6 +1,6 @@
 <?php
 
-use Clearvox\DateConstraints\Constraints\Day\SpecificDayConstraint;
+use Zogo\DateConstraints\Constraints\Day\SpecificDayConstraint;
 
 class SpecificDayConstraintTest extends PHPUnit_Framework_TestCase
 {

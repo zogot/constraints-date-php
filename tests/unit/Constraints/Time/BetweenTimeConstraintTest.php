@@ -1,7 +1,7 @@
 <?php
 
-use Clearvox\DateConstraints\Constraints\Day\SpecificDayConstraint;
-use Clearvox\DateConstraints\Constraints\Time\BetweenTimeConstraint;
+use Zogo\DateConstraints\Constraints\Day\SpecificDayConstraint;
+use Zogo\DateConstraints\Constraints\Time\BetweenTimeConstraint;
 
 class BetweenTimeConstraintTest extends PHPUnit_Framework_TestCase
 {

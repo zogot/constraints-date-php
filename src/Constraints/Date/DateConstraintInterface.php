@@ -1,7 +1,7 @@
 <?php
-namespace Clearvox\DateConstraints\Constraints\Date;
+namespace Zogo\DateConstraints\Constraints\Date;
 
-use Clearvox\DateConstraints\Constraints\ConstraintInterface;
+use Zogo\DateConstraints\Constraints\ConstraintInterface;
 
 interface DateConstraintInterface extends ConstraintInterface
 {

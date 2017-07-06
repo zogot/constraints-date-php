@@ -15,11 +15,11 @@ $ composer require clearvox/constraints-date
 <?php
 require 'vendor/autoload.php';
 
-use Clearvox\DateConstraints\Constraints\Day\DayConstraintInterface;
-use Clearvox\DateConstraints\Constraints\Day\SpecificDayConstraint;
-use Clearvox\DateConstraints\Constraints\Month\MonthConstraintInterface;
-use Clearvox\DateConstraints\Constraints\Month\SpecificMonthConstraint;
-use Clearvox\DateConstraints\Validators\AndValidator;
+use Zogo\DateConstraints\Constraints\Day\DayConstraintInterface;
+use Zogo\DateConstraints\Constraints\Day\SpecificDayConstraint;
+use Zogo\DateConstraints\Constraints\Month\MonthConstraintInterface;
+use Zogo\DateConstraints\Constraints\Month\SpecificMonthConstraint;
+use Zogo\DateConstraints\Validators\AndValidator;
 
 // Build a validator instance
 $validator = new AndValidator();

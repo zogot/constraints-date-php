@@ -1,7 +1,7 @@
 <?php
-namespace Clearvox\DateConstraints\Validators;
+namespace Zogo\DateConstraints\Validators;
 
-use Clearvox\DateConstraints\Constraints\ConstraintInterface;
+use Zogo\DateConstraints\Constraints\ConstraintInterface;
 use DateTime;
 
 class AndValidator implements ValidatorInterface

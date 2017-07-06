@@ -1,6 +1,6 @@
 <?php
 
-use Clearvox\DateConstraints\Constraints\Year\SpecificYearConstraint;
+use Zogo\DateConstraints\Constraints\Year\SpecificYearConstraint;
 
 class SpecificYearConstraintTest extends PHPUnit_Framework_TestCase
 {

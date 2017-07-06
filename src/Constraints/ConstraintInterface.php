@@ -1,5 +1,5 @@
 <?php
-namespace Clearvox\DateConstraints\Constraints;
+namespace Zogo\DateConstraints\Constraints;
 
 use DateTime;
 
