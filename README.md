@@ -6,7 +6,7 @@ DateTime Constraints Library. Use this to add constraints to a validator and ver
 ## Install
 Via Composer 
 ```bash
-$ composer require clearvox/constraints-date
+$ composer require zogo/constraints-date
 ```
 
 ## Usage
