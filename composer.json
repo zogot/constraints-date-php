@@ -2,7 +2,7 @@
     "name": "zogot/constraints-date",
     "description": "DateTime Constraints Library. Use this to add constraints to a validator and verify DateTime objects pass those constraints.",
     "license": "MIT",
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Leon Rowland",
