@@ -2,6 +2,7 @@
 namespace Zogo\DateConstraints\Constraints\Day;
 
 use DateTime;
+use Zogo\DateConstraints\Constraints\ConstraintInterface;
 
 class SpecificDayConstraint implements DayConstraintInterface
 {
@@ -38,5 +39,38 @@ class SpecificDayConstraint implements DayConstraintInterface
         }
 
         return false;
+    }
+
+    /**
+     * Return this constraint as an array
+     *
+     * @return array
+     */
+    public function toArray()
+    {
+        return [
+            'days' => $this->days,
+        ];
+    }
+
+    /**
+     * Build from the toArray output.
+     *
+     * @param array $data
+     * @return ConstraintInterface
+     */
+    public static function buildFromArray($data)
+    {
+        $days = $data['days'];
+        $instance = new self($data['days'][0]);
+        unset($days[0]);
+
+        if(!empty($days)) {
+            foreach($days as $day) {
+                $instance->addDay($day);
+            }
+        }
+
+        return $instance;
     }
 }

@@ -2,6 +2,7 @@
 namespace Zogo\DateConstraints\Constraints\Time;
 
 use DateTime;
+use Zogo\DateConstraints\Constraints\ConstraintInterface;
 
 class SpecificTimeConstraint implements TimeConstraintInterface
 {
@@ -40,5 +41,28 @@ class SpecificTimeConstraint implements TimeConstraintInterface
     public function isValid(DateTime $dateTime)
     {
         return $dateTime->format('H:i:s') === $this->time->format('H:i:s');
+    }
+
+    /**
+     * Return this constraint as an array
+     *
+     * @return array
+     */
+    public function toArray()
+    {
+        return [
+            'times' => [$this->time->format('Y-m-d H:i:s')]
+        ];
+    }
+
+    /**
+     * Build from the toArray output.
+     *
+     * @param array $data
+     * @return ConstraintInterface
+     */
+    public static function buildFromArray($data)
+    {
+        return new self(new DateTime($data['times'][0]));
     }
 }

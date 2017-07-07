@@ -38,4 +38,18 @@ class SpecificYearConstraintTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals([2015], $this->constraint->getYears());
     }
+
+    public function testToArray()
+    {
+        $array = $this->constraint->toArray();
+
+        $this->assertArrayHasKey('years', $array);
+    }
+
+    public function testBuildFromArray()
+    {
+        $array = $this->constraint->toArray();
+        $instance = SpecificYearConstraint::buildFromArray($array);
+        $this->assertSame($array, $instance->toArray());
+    }
 }

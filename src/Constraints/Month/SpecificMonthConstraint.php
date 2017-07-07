@@ -2,6 +2,7 @@
 namespace Zogo\DateConstraints\Constraints\Month;
 
 use DateTime;
+use Zogo\DateConstraints\Constraints\ConstraintInterface;
 
 class SpecificMonthConstraint implements MonthConstraintInterface
 {
@@ -48,11 +49,44 @@ class SpecificMonthConstraint implements MonthConstraintInterface
         $submittedMonth = $dateTime->format('n');
 
         foreach ($this->months as $month) {
-            if($submittedMonth == $month) {
+            if ($submittedMonth == $month) {
                 return true;
             }
         }
 
         return false;
+    }
+
+    /**
+     * Return this constraint as an array
+     *
+     * @return array
+     */
+    public function toArray()
+    {
+        return [
+            'months' => $this->months
+        ];
+    }
+
+    /**
+     * Build from the toArray output.
+     *
+     * @param array $data
+     * @return ConstraintInterface
+     */
+    public static function buildFromArray($data)
+    {
+        $months = $data['months'];
+        $instance = new self($months[0]);
+        unset($months[0]);
+
+        if(!empty($months)) {
+            foreach($months as $month) {
+                $instance->addMonth($month);
+            }
+        }
+
+        return $instance;
     }
 }

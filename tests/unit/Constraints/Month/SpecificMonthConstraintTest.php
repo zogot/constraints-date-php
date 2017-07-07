@@ -43,4 +43,16 @@ class SpecificMonthConstraintTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals([SpecificMonthConstraint::JANUARY], $this->constraint->getMonths());
     }
+
+    public function testToArray()
+    {
+        $this->assertArrayHasKey('months', $this->constraint->toArray());
+    }
+
+    public function testBuildFromArray()
+    {
+        $array = $this->constraint->toArray();
+        $instance = SpecificMonthConstraint::buildFromArray($array);
+        $this->assertEquals($array, $instance->toArray());
+    }
 }

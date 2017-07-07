@@ -41,4 +41,16 @@ class SpecificDayConstraintTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals([SpecificDayConstraint::MONDAY], $this->constraint->getDays());
     }
+
+    public function testToArray()
+    {
+        $this->assertArrayHasKey('days', $this->constraint->toArray());
+    }
+
+    public function testBuildFromArray()
+    {
+        $array = $this->constraint->toArray();
+        $instance = SpecificDayConstraint::buildFromArray($array);
+        $this->assertEquals($array, $instance->toArray());
+    }
 }

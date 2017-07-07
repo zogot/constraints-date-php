@@ -45,4 +45,21 @@ class BetweenTimeConstraintTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals([$this->start, $this->end], $this->constraint->getTimes());
     }
+
+    public function testToArray()
+    {
+        $array = $this->constraint->toArray();
+        $this->assertArrayHasKey('times', $array);
+        $this->assertArrayHasKey('after', $array['times']);
+        $this->assertArrayHasKey('before', $array['times']);
+    }
+
+    public function testBuildFromArray()
+    {
+        $array = $this->constraint->toArray();
+
+        $instance = BetweenTimeConstraint::buildFromArray($array);
+
+        $this->assertEquals($array, $instance->toArray());
+    }
 }

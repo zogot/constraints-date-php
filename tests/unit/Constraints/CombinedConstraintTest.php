@@ -66,4 +66,29 @@ class CombinedConstraintTest extends PHPUnit_Framework_TestCase
         $valid = $combinedConstraint->isValid(new DateTime());
         $this->assertFalse($valid);
     }
+
+    public function testToArray()
+    {
+        $mockArray = ['values' => ['random1', 'random2', 'random3']];
+        $mockConstraint = $this->getMock(ConstraintInterface::class);
+        $mockConstraint
+            ->expects($this->once())
+            ->method('toArray')
+            ->willReturn($mockArray);
+
+        $combinedConstraint = new CombinedConstraint(
+            $mockConstraint
+        );
+
+        $expected = [
+            'constraints' => [
+                [
+                    'fqdn' => get_class($mockConstraint),
+                    'data' => $mockArray,
+                ]
+            ],
+        ];
+        $array = $combinedConstraint->toArray();
+        $this->assertEquals($expected, $array);
+    }
 }

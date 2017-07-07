@@ -34,4 +34,16 @@ class SpecificDateConstraintTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals([1,2,3,4,5], $this->constraint->getDates());
     }
+
+    public function testToArray()
+    {
+        $this->assertArrayHasKey('dates', $this->constraint->toArray());
+    }
+
+    public function testBuildFromArray()
+    {
+        $array = $this->constraint->toArray();
+        $instance = SpecificDateConstraint::buildFromArray($array);
+        $this->assertEquals($array, $instance->toArray());
+    }
 }

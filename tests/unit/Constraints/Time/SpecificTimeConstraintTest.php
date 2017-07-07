@@ -22,4 +22,20 @@ class SpecificTimeConstraintTest extends PHPUnit_Framework_TestCase
         $specific = new SpecificTimeConstraint($dateTime);
         $this->assertEquals([new DateTime($dateTime->format('H:i:s'))], $specific->getTimes());
     }
+
+    public function testToArray()
+    {
+        $specific = new SpecificTimeConstraint(new DateTime('2015-02-10 15:00:00'));
+        $this->assertArrayHasKey('times', $specific->toArray());
+    }
+
+    public function testBuildFromArray()
+    {
+        $specific = new SpecificTimeConstraint(new DateTime('2015-02-10 15:00:00'));
+        $array = $specific->toArray();
+
+        $instance = SpecificTimeConstraint::buildFromArray($array);
+
+        $this->assertSame($array, $instance->toArray());
+    }
 }
